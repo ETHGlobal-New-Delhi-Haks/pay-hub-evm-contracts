@@ -2,14 +2,18 @@ import { ethers } from "hardhat";
 
 async function main() {
 
-  const signers = await ethers.getSigners();
+  // bob
+  const privateKey = "0x2d73c8763a929d66e4dac344721aac7d81aa24a22bb2b7c4e7a94aee7565751b";
+
+  // convert private key to signer
+  const signers = [new ethers.Wallet(privateKey, ethers.provider)];
   const network = await ethers.provider.getNetwork();
   const targetRelayer = "0xb512F1B21ce69C820cc96eBf58da1eE7bf57FDeb";
   const targetContract = "0x8b0601343c7DFd7C0782134011100179DeAf39B2";
   const targetValue = "0";
   const targetGas = "1000000";
   const targetNonce = (await (await ethers.getContractFactory("Relayer")).attach(targetRelayer).nonces(signers[0].address)).toString();
-  const targetData = (await ethers.getContractFactory("SimpleERC20")).interface.encodeFunctionData("transfer", ["0x00baBAE949C80Ad8547C010FDBb87cD3223077a4", ethers.parseEther("100")]);
+  const targetData = (await ethers.getContractFactory("SimpleERC20")).interface.encodeFunctionData("transfer", ["0xFcd3e009A9a9ed9076C58bC13be0e521df17b326", ethers.parseEther("1")]);
 
   const EIP712Domain = {
     name: "Relayer",
