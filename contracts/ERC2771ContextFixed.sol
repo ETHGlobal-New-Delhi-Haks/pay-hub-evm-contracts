@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 // OpenZeppelin Contracts (last updated v4.7.0) (metatx/ERC2771Context.sol)
 
-pragma solidity ^0.8.9;
+pragma solidity 0.8.20;
 
 import "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
