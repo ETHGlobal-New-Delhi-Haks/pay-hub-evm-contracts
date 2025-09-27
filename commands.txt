@@ -1,3 +1,4 @@
+
 hh task:deploy-multi-transactor --network polygon
 
 hh verify 0x36d4175F37c7baFBb65FfcC5f3696EC0f16272e8 --network polygon
@@ -10,3 +11,6 @@ hh task:deploy-relayer --network polygon
  hh task:deploy-simple-erc20 --initial-owner 0xFcd3e009A9a9ed9076C58bC13be0e521df17b326 --trusted-forwarder 0xb512F1B21ce69C820cc96eBf58da1eE7bf57FDeb --network polygon
 
   hh verify 0x8b0601343c7DFd7C0782134011100179DeAf39B2 --network polygon
+
+  hh task:mint-simple-erc20 --target-contract 0x8b0601343c7DFd7C0782134011100179DeAf39B2 --target-wallet 0xFcd3e009A9a9ed9076C58bC13be0e521df17b326 --amount 1000000000000000000000000000 --send-transaction --network polygon
+
